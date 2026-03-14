@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Проверка точки ПВЗ</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <header>
+        <h1>Проверка точки ПВЗ</h1>
+        <p class="subtitle">Введите адрес или кликните на карту</p>
+      </header>
+
+      <form id="check-form">
+        <div class="input-row">
+          <input id="address-input" type="text"
+            placeholder="г. Санкт-Петербург, Невский проспект 1"
+            autocomplete="off" />
+          <button type="submit" id="submit-btn">Найти</button>
+        </div>
+      </form>
+
+      <div id="error-banner" class="error-banner hidden"></div>
+
+      <div id="results" class="results hidden">
+        <div class="coords" id="coords-display"></div>
+        <div class="cards">
+
+          <div class="card">
+            <div class="card-header ozon-header">
+              <span class="card-logo">OZON</span>
+              <a id="ozon-link" class="official-link" target="_blank" rel="noopener">Открыть на карте ↗</a>
+            </div>
+            <div class="card-body" id="ozon-body"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header wb-header">
+              <span class="card-logo">Wildberries</span>
+              <a id="wb-link" class="official-link" target="_blank" rel="noopener">Открыть на карте ↗</a>
+            </div>
+            <div class="card-body" id="wb-body"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-header ym-header">
+              <span class="card-logo">Яндекс Маркет</span>
+              <a id="ym-link" class="official-link" target="_blank" rel="noopener">Открыть на карте ↗</a>
+            </div>
+            <div class="card-body" id="ym-body"></div>
+          </div>
+
+        </div>
+      </div>
+    </aside>
+
+    <main class="map-area">
+      <div id="map"></div>
+      <div class="map-tip">Кликните на карту, чтобы проверить точку</div>
+    </main>
+
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
